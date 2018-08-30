@@ -1,0 +1,86 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>StockNest</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="One stop for all financial resources">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0, user-scalable=no"/>
+    <meta name="author" content="Eduhub">
+    <base href="/">
+
+    {% if ISOFFLINE %}
+      <link href="{% static "offline/fonts/lato.css" %}" rel='stylesheet' type='text/css' />
+      <link rel="stylesheet" type="text/css" href="{% static "offline/fonts/raleway.css" %}">
+      <script type="text/javascript" src="{% static "offline/js/jquery.min.js" %}"></script>
+      <script type="text/javascript" src="{% static "offline/js/angular.min.js" %}"></script>
+      <script type="text/javascript" src="{% static "offline/js/angular-cookies.min.js" %}"></script>
+      <script type="text/javascript" src="{% static "offline/js/angular-messages.min.js" %}"></script>
+      <script type="text/javascript" src="{% static "offline/js/angular-animate.min.js" %}"></script>
+      <script type="text/javascript" src="{% static "offline/js/angular-sanitize.min.js" %}"></script>
+      <script type="text/javascript" src="{% static "offline/js/angular-route.min.js" %}"></script>
+      <script type="text/javascript" src="{% static "offline/js/angular-resource.min.js" %}"></script>
+      <script type="text/javascript" src="{% static "offline/js/angular-touch.min.js" %}"></script>
+      <script type="text/javascript" src="{% static "offline/js/ui-bootstrap-tpls.min.js" %}"></script>
+      <link rel="stylesheet" type="text/css" href="{% static "offline/css/ng-img-crop.min.css" %}">
+      <link rel="stylesheet" type="text/css" href="{% static "offline/css/bootstrap.min.css" %}">
+      <script type="text/javascript" src="{% static "offline/js/bootstrap.min.js" %}"></script>
+      <link rel="stylesheet" type="text/css" href="{% static "offline/css/font-awesome.min.css" %}">
+      <script type="text/javascript" src="{% static "offline/js/Chart.min.js" %}"></script>
+      <script type="text/javascript" src="{% static "offline/js/smooch.min.js" %}"></script>
+      <script type="text/javascript" src="{% static "offline/js/angular-chart.min.js" %}"></script>
+      <link rel="stylesheet" type="text/css" href="{% static "offline/css/css.css" %}">
+      <link rel="stylesheet" type="text/css" href="{% static "offline/css/nprogress.min.css" %}">
+      <script type="text/javascript" src="{% static "offline/js/nprogress.min.js" %}"></script>
+      <script type="text/javascript" src="{% static "offline/js/angular-recaptcha.min.js" %}"></script>
+    {% else %}
+      <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css' />
+      <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway">
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-cookies.min.js"></script>
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-messages.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-animate.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.6.4/angular-sanitize.min.js"></script>
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.min.js"></script>
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-resource.min.js"></script>
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-touch.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ng-img-crop/0.3.2/ng-img-crop.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ng-img-crop/0.3.2/ng-img-crop.js"></script>
+      <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/angular.chartjs/latest/angular-chart.min.js"></script>
+      <script src="https://cdn.smooch.io/smooch.min.js"></script>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla">
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css">
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-recaptcha/4.1.0/angular-recaptcha.min.js"></script>
+    {% endif%} 
+  </head>
+  <body class="ng-cloak">
+    <nav class="navbar navbar-fixed-top" id="topnav" ng-include="'{% static "general/templates/topnav.html" %}'"></nav>
+    <div class="alert alert-danger" style="display:none;" id="mainErrDiv"></div>
+
+    <script type="text/javascript">
+      const DEBUG = parseInt("{{DEBUG}}");
+      if($(window).width()>767) Smooch.init({
+        appToken: '5wl90ikdwmw242nv83w3iwjtj',
+        customText: {
+          headerText: 'Feedback/suggestions?',
+          inputPlaceholder: 'Type a message...',
+          sendButtonText: 'Send',
+          introductionText: 'We\'re here to talk, so ask us anything! Your suggestions and feedback are welcome and appreciated.',
+          introAppText:''
+        }
+      });
+    </script>
+    <script type="text/javascript" src="{% static "general/js/base.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "login/js/login.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "login/js/signup.min.js" %}"></script>
+      
+  </body>
+</html>

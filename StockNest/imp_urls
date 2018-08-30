@@ -1,0 +1,10 @@
+Can be used with R, Python and D3.js to predict and visualize who’ll gain ad who’ll loss 
+ 
+Practical approach would be to watch these APIs for fresh over the period of time (say a week or two) to generate result.
+ 
+ 
+Top - GainersUrl
+http://www.nseindia.com/live_market/dynaContent/live_analysis/gainers/niftyGainers1.json
+ 
+Top - LosersUrl
+http://www.nseindia.com/live_market/dynaContent/live_analysis/losers/niftyLosers1.json

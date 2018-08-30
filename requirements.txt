@@ -1,0 +1,11 @@
++ keras
++ tensorflow
++ numpy 
++ pandas
++ XGBoost
++ Sklearn
++ TextBlob
++ Django
++ LAMP
++ tweepy
++ requests

@@ -1,0 +1,306 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>TechnoFin</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="One stop for all entrepreneurship resources">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0, user-scalable=no"/>
+		<meta name="author" content="StockHub">
+		<link href="{% static "offline/css/bootstrap.min.css"%}" rel='stylesheet' type='text/css' />
+		<link href="{% static "base.css" %}" rel='stylesheet' type='text/css' />
+		<link href="{% static "offline/fonts/lato.css"%}" rel='stylesheet' type='text/css' />
+		<link rel="stylesheet" type="text/css" href= "{% static "offline/css/font-awesome.min.css" %}">
+
+		<script type="text/javascript" src="{% static "offline/js/jquery.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/angular.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/angular-cookies.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/angular-messages.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/angular-animate.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/angular-sanitize.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/angular-route.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/angular-resource.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/angular-touch.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/ui-bootstrap-tpls.min.js" %}"></script>
+		<link rel="stylesheet" type="text/css" href="{% static "offline/css/ng-img-crop.min.css" %}">
+		<link rel="stylesheet" type="text/css" href="{% static "offline/css/bootstrap.min.css" %}">
+		<script type="text/javascript" src="{% static "offline/js/bootstrap.min.js" %}"></script>
+		<link rel="stylesheet" type="text/css" href="{% static "offline/css/font-awesome.min.css" %}">
+		<script type="text/javascript" src="{% static "offline/js/Chart.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/smooch.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/angular-chart.min.js" %}"></script>
+		<link rel="stylesheet" type="text/css" href="{% static "offline/css/css.css" %}">
+		<link rel="stylesheet" type="text/css" href="{% static "offline/css/nprogress.min.css" %}">
+		<link rel="stylesheet" type="text/css" href="{% static "offline/css/slider.css" %}">
+		<script type="text/javascript" src="{% static "offline/js/nprogress.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/angular-recaptcha.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/bootstrap-slider.js" %}"></script>
+
+		<script type="text/javascript">
+			if($(window).width()>767) Smooch.init({
+				appToken: 'eakl8lpwgfp9rf8jlymgbqzzr',
+				customText: {
+				  headerText: 'Feedback/suggestions?',
+				  inputPlaceholder: 'Type a message...',
+				  sendButtonText: 'Send',
+				  introductionText: 'We\'re here to talk, so ask us anything! Your suggestions and feedback are welcome and appreciated.',
+				  introAppText:''
+				}
+			});
+		</script>
+	</head>
+	<body ng-app="techfin">
+	<div class="wrapper" ng-controller="home">
+	<div class="main">
+		<nav class="navbar navbar-default navbar-brand navbar-fixed-top" id="TopNavBar" style="padding:0; margin:0; ">
+			<div class="sitelogo navbar-header" style="height: 50px;"> 
+				<button type="button" class="navbar-toggle" id="topNavToggleButton" data-toggle="collapse" data-target="#ehTopNavBar">
+					<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+				</button>
+				<h3 style="padding-left:20px;"><a href="#home" style="text-decoration: none;">TechnoFin</a></h3>
+			</div>
+			<div class="collapse navbar-collapse" style="padding-right:50px; height:50px;">
+				<ul class="nav navbar-nav navbar-right" >
+					<li><a href="#about" style="color:black;"><i class="fa fa-info-circle"></i> About</a></li>
+					<li><a href="#" style="color:black;"><i class="fa fa-bell"></i> Notifications</a></li>
+					<li><a href="#" style="color:black;"><i class="fa fa-cog"></i> Settings</a></li>					
+					<li><a href="#contact" style="color:black;"><i class="fa fa-phone"></i> Contact</a></li>
+				</ul>
+			</div>
+		</nav>
+		<section class="container-fluid" id="home" style="height:970px; background-image: url({% static "images/finad.jpg" %}); background-size: cover; margin-top:-150px;">
+			<h2 style="color:white;margin-top:210px;font-weight:900"><i>Make your money WORK for !</i></h2><br>
+
+			<div class="container-fluid" >
+				<div class="col-sm-4" id="r1typeLow" style="margin:15px auto;">
+					<a ng-click="banking()" style="cursor:pointer">
+						<div class="jumbotron" style="margin:0 auto;width:250px; padding:10px; text-align: center;">
+							<div class="container-fluid" style="background-image: url({% static "images/bank.jpg" %}); height: 200px; background-size:cover;"></div>
+							<button class="btn btn-lg btn-primary" ng-click="banking()">BankSavings</button> <br>Low Risk Investment
+						</div>
+					</a>
+				</div>
+				<div id="r1typeMid" class="col-sm-4" style="margin:15px auto;">
+					<a ng-click="gold()" style="cursor:pointer">
+						<div class="jumbotron" style="margin:0 auto;width:250px; padding:10px; text-align: center;">
+							<div class="container-fluid" style="background-image: url({% static "images/gold.png" %}); height: 200px; background-size:cover;"></div>
+							<button class="btn btn-lg btn-primary" ng-click="gold()">GoldSavings</button><br>Moderate Risk Investment
+						</div>
+					</a><br>
+
+					<a ng-click="realestate()" style="cursor:pointer">
+						<div class="jumbotron" style="margin:0 auto;width:250px; padding:10px; text-align:center;">
+							<div class="container-fluid" style="background-image: url({% static "images/realestate.jpg" %}); height: 200px; background-size:cover;"></div>
+							<button class="btn btn-lg btn-primary" ng-click="realestate()">Real-estate</button><br>Moderate Risk Investment
+						</div>
+					</a>
+				</div>
+				<div id="r1typeHigh" class="col-sm-4" style="margin:0 auto;">
+					<a ng-click="stocks()" style="cursor:pointer">
+						<div class="jumbotron" style="margin:10px auto;width:250px; padding:10px; text-align:center;">
+							<div class="container-fluid" style="background-image: url({% static "images/stock.jpg" %}); height: 200px; background-size:cover;"></div>
+							<button class="btn btn-lg btn-primary" ng-click="stocks()">Stocks</button><br>High Risk Investment
+						</div>
+					</a>
+				</div>
+			</div>
+			<h4 style="font-weight:900; color: white;"> Don't know what's best for YOU? Check this out: <a href="/index/#suggestions" style="text-decoration: none;">Path Suggestions</a></h4>
+		</section>
+		<section class="container-fluid" id="suggestions" style="height:800px; background-size: cover;padding:0">
+			<img src="{% static "images/paths.jpg" %}" alt="AI finance" style="padding:0; margin: 0;" width="100%" height="350">
+			<div class="container-fluid" style="margin-top:50px;">
+				<div class="col-sm-3">
+					<label>Investment Amount (in <span class="fa fa-inr"></span>): </label>
+					<input  class="form-control" type="number" name="amt" ng-model = "Investmentamt"><br>
+
+					<label>Investment Type (Amount of time dependancy in %) : </br>{[{InvestmentTime}]}%</label><br>
+					<input type="range" ng-model="InvestmentTime" min="1" max="100" value="0"><br>
+					<p>Can't decide? Take this <a data-target="#timeprofile" data-toggle="modal">Survey! </a></p>
+
+					<label> Degree of Risk(in %) :</br> {[{InvestmentRisk}]}%</label>
+					<input type="range" ng-model="InvestmentRisk" min="1" max="100" ><br>
+					<p>Difficult in choosing a number? Take this <a data-target="#riskprofile" data-toggle="modal">Survey! </a></p>
+					
+					<button class="btn" ng-click="estimatePath()"> Estimate path</button>
+				</div>
+				<div class="col-sm-9">
+					<table class="table table-bordered table-hover" ng-show="pathTable">
+						<thead>
+							<tr><th>Sector</th><th>Percentage</th><th>Quantity</th></tr>
+						</thead>
+						<tbody>
+							<tr><td>Banking</td><td>{[{percentage.banking}]}</td><td><button class="btn" ng-click="getList('b')">Details</button></td></tr>
+							<tr><td>Stocks</td><td>{[{percentage.stocks}]}</td><td><button class="btn" ng-click="getList('s')">Details</button></td></tr>
+							<tr><td>Property</td><td>{[{percentage.property}]}</td><td><button class="btn" ng-click="getList('p')">Details</button></td></tr>
+							<tr><td>Gold</td><td>{[{percentage.gold}]}</td><td>--</td></tr>
+						</tbody>
+					</table>
+					<div class="container-fluid"  ng-show="showList">
+						<div class="col-sm-6">
+							<div class="container-fluid" style="max-height: 200px; overflow-y: scroll;">
+								<table class="table table-bordered">
+									<thead>
+										<tr><th>Name</th><th>Details</th></tr>
+									</thead>
+									<tbody>
+										<tr ng-repeat="obj in tableList">
+											<td>{[{obj.name}]}</td>
+											<td><button class="btn" ng-click="getDetails(obj.id, type)">Details</button></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="col-sm-6" id="details">
+							{[{details}]}
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="modal fade" id ="timeprofile">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+				                                    <h3 class="modal-title">Time Estimation:</h3>
+						</div>
+						<div class="modal-body">
+							<div class="container-fluid">
+								<h3>1) What Percentage of your income are you able to save?</h3>
+								<label style="display:inline-block;padding-left:50px"><input type="radio" name="timeq1" ng-model="timeq1" value="50">Less Than 5%</label>
+								<label style="display:inline-block;padding-left:50px"><input type="radio" name="timeq1" ng-model="timeq1" value="30">10-20%</label>
+								<label style="display:inline-block;padding-left:50px"><input type="radio" name="timeq1" ng-model="timeq1" value="20">30-50%</label>
+							</div><br>
+							<div class="container-fluid">
+								<h3>2) What is your Major source of income?</h3>
+								<label style="display:inline-block;padding-left:50px"><input type="radio" name="timeq2" ng-model="timeq2" value="20">Only Business/Salary</label>
+								<label style="display:inline-block;padding-left:50px"><input type="radio" name="timeq2" ng-model="timeq2" value="30">Business/Salary and Rent</label>
+								<label style="display:inline-block;padding-left:50px"><input type="radio" name="timeq2" ng-model="timeq2" value="50">Business/Salary, Rent and BankInterests</label>
+							</div><br>
+							<div class="container-fluid">
+								<h3>2) How soon do you expect to get the returns?</h3>
+								<label style="display:inline-block;padding-left:50px"><input type="radio" name="timeq3" ng-model="timeq3" value="50">Within 6-12 months</label>
+								<label style="display:inline-block;padding-left:50px"><input type="radio" name="timeq3" ng-model="timeq3" value="30">1-2 years</label>
+								<label style="display:inline-block;padding-left:50px"><input type="radio" name="timeq3" ng-model="timeq3" value="20">More than 2 years</label>
+							</div><br>
+							<button class="btn" ng-click="timeProfile()">Done</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="modal fade" id="riskprofile">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+						<div class="modal-header">
+			                                    	<button type="button" class="close" data-dismiss="modal">&times;</button>
+			                                    	<h3 class="modal-title">Risk Profiling:</h3>
+			                                	</div>
+			                                    <div class="modal-body">
+			                                    	<div class="container-fluid">
+								<h3>1) In how many years do you plan to retire?</h3>
+								<label style="display:inline-block;padding-left:50px"><input type="radio" name="riskq1" ng-model="riskq1" value="50">Already Retired</label>
+								<label style="display:inline-block;padding-left:50px"><input type="radio" name="riskq1" ng-model="riskq1" value="40">Less than 30</label>
+								<label style="display:inline-block;padding-left:50px"><input type="radio" name="riskq1" ng-model="riskq1" value="10">Greater than 30</label>
+			                                    	</div><br>
+			                                    	<div class="container-fluid">
+								<h3>2) Your loan repayments account for</h3>
+								<label style="display:inline-block;padding-left:50px"><input type="radio" name="riskq2" ng-model="riskq2" value="50">More Than 50% of Income</label>
+								<label style="display:inline-block;padding-left:50px"><input type="radio" name="riskq2" ng-model="riskq2" value="30">Less Than 50% of Income</label>
+								<label style="display:inline-block;padding-left:50px"><input type="radio" name="riskq2" ng-model="riskq2" value="20">No Loan</label>
+			                                    	</div><br>
+			                                    	<div class="container-fluid">
+								<h3>3) Numer of  Family members(dependents)?</h3>
+								<label style="display:inline-block;padding-left:50px"><input type="radio" name="riskq3" ng-model="riskq3" value="50">More Than 4</label>
+								<label style="display:inline-block;padding-left:50px"><input type="radio" name="riskq3" ng-model="riskq3" value="30">Less Than 4</label>
+								<label style="display:inline-block;padding-left:50px"><input type="radio" name="riskq3" ng-model="riskq3" value="20">No Dependents</label>
+			                                    	</div><br>
+			                                    	<div class="container-fluid">
+								<h3>4) How Stable is your job?</h3>
+								<label style="display:inline-block;padding-left:50px"><input type="radio" name="riskq4" ng-model="riskq4" value="20">Not Sure if it will last</label>
+								<label style="display:inline-block;padding-left:50px"><input type="radio" name="riskq4" ng-model="riskq4" value="30">It only pays the bills</label>
+								<label style="display:inline-block;padding-left:50px"><input type="radio" name="riskq4" ng-model="riskq4" value="50">Excellent chances of growth </label>
+			                                    	</div><br>
+			                                    	<button class="btn" ng-click="riskProfile()">Done</button>
+			                                    </div>
+			                         </div>
+			             </div>
+			</div>
+		</section>
+		<section class="container-fluid" id="contact" style="height: 750px;">
+			<h3 style="text-align: center;">Contact Us</h3>
+			<div class="container-fluid" style="height: 500px;margin-top:80px;">
+				<div class="col-sm-4">
+					<label style="font-size:28px;"><span class="glyphicon glyphicon-map-marker" style="margin: 10px;"></span> IIT Madras</label><br>
+					<label style="font-size:28px;"><span class="glyphicon glyphicon-phone" style="margin: 10px;"></span> 7406184580</label><br><br>
+					<button type="button" class="btn" data-target="#aboutus" data-toggle="modal">About Us</button>
+
+			                    <div class="modal fade" id="aboutus">
+			                        <div class="modal-dialog modal-lg">
+			                            <div class="modal-content">
+			                                <div class="modal-header">
+			                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+			                                    <h3 class="modal-title">Contact us at:</h3>
+			                                </div>
+			                                <div class="modal-body">
+			                                    <div class="container-fluid">
+			                                        <p style="text-align:center;">3rd Year Students,Engineering Design IIT Madras</p>
+			                                        <div class="col-sm-6">
+			                                            <a href="https://drive.google.com/uc?export=view&id=0B6INYS1fvgdTaTRCWjd3RDk2Y1E"><img src="https://drive.google.com/uc?export=view&id=0B6INYS1fvgdTaTRCWjd3RDk2Y1E" class="img-circle" style="height:150px;width:150px;"/></a>
+			                                            <div style="font-size:20px;display:inline-block;" style="text-align:center;">
+			                                                <p style="font-size:15px;text-align:center;">Avinash G. Kori <br>(ED15B006)</p>
+			                                                <ul class="list-inline">
+			                                                    <li><a href="mailto:ed15b006@smail.iitm.ac.in" target="_blank"><i class="fa fa-envelope"></i></a></li>
+			                                                    <li><a href="www.linkedin.com/in/koriavinash1" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+			                                                </ul>
+			                                            </div>
+			                                        </div>
+
+			                                        <div class="col-sm-6"> 
+			                                            <a href="https://drive.google.com/uc?export=view&id=0B6INYS1fvgdTYnY5TFowWnQtWFk"><img src="https://drive.google.com/uc?export=view&id=0B6INYS1fvgdTYnY5TFowWnQtWFk" class="img-circle" style="height:150px;width:150px;"/></a>
+			                                            <div style="font-size:20px;display:inline-block;" style="text-align:center;">
+			                                                <p style="font-size:15px;text-align:center;">Akhil Poojary <br>(ED15B003)</p>
+			                                                <ul class="list-inline">
+			                                                    <li><a href="mailto:ed15b003@smail.iitm.ac.in" target="_blank"><i class="fa fa-envelope"></i></a></li>
+			                                                    <li><a href="https://www.linkedin.com/in/akhil-poojary-28026811b/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+			                                                </ul>
+			                                            </div>
+			                                        </div>
+			  
+			                                    </div>
+			                                </div>
+			                            </div>
+			                        </div>
+			                    </div>
+
+				</div>
+
+				<div class="col-sm-8">
+					<input type="text" name="from" class="form-control" style="border: none;" placeholder="Email ID"><br>
+					<input type="text" name="subject" class="form-control" style="border: none;" placeholder="Subject"><br>
+					<textarea class="form-control" style="border: none;height: 140px;" name="content" placeholder="Write your suggestions/ complaints..."></textarea><br>
+
+					<button class="btn btn-md btn-primary">Send</button>
+
+				</div>
+			</div>
+			<hr style="padding: 0; margin: 0;">
+			<div class="container-fluid" style="height: 100px;">
+				<p style="text-align:center;margin-top: 20px;">
+					<i class="fa fa-twitter" aria-hidden="true" style="font-size:28px; margin: 5px;" ></i>
+					<i class="fa fa-facebook" style="font-size:28px; margin: 5px;"></i>
+					<i class="fa fa-google-plus" style="font-size:28px; margin: 5px;"></i>
+					<i class="fa fa-github" style="font-size:28px; margin: 5px;"></i>
+				</p>
+				<p style="text-align:center;">&copy; TechnoFin 2017</p>
+			</div>
+		</section>
+	</div></div>
+	</body>
+	<script type="text/javascript" src="{% static "index.js" %}"></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPHePpfDn4jeDO6nnMBw8WhCvI6X1g-WM&callback=initMap">
+    </script>
+</html>

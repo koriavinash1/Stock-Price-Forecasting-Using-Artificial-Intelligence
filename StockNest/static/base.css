@@ -1,0 +1,12 @@
+var app = angular.module('stockhub', []);
+app.config(function($httpProvider,$interpolateProvider){
+	$httpProvider.defaults.useXDomain = true;
+	delete $httpProvider.defaults.headers.common['X-Requested-With'];
+	$httpProvider.interceptors.push('httpRequestInterceptor');
+	$interpolateProvider.startSymbol('{[{');
+	$interpolateProvider.endSymbol('}]}');
+});
+
+app.controller(function(){
+
+});

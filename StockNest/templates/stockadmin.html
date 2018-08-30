@@ -1,0 +1,146 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>TechnoFin</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="One stop for all entrepreneurship resources">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0, user-scalable=no"/>
+		<meta name="author" content="StockHub">
+		<link href="{% static "offline/css/bootstrap.min.css"%}" rel='stylesheet' type='text/css' />
+		<link href="{% static "base.css" %}" rel='stylesheet' type='text/css' />
+		<link href="{% static "offline/fonts/lato.css"%}" rel='stylesheet' type='text/css' />
+		<link rel="stylesheet" type="text/css" href= "{% static "offline/css/font-awesome.min.css" %}">
+
+		<script type="text/javascript" src="{% static "offline/js/jquery.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/angular.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/angular-cookies.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/angular-messages.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/angular-animate.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/angular-sanitize.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/angular-route.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/angular-resource.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/angular-touch.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/ui-bootstrap-tpls.min.js" %}"></script>
+		<link rel="stylesheet" type="text/css" href="{% static "offline/css/ng-img-crop.min.css" %}">
+		<link rel="stylesheet" type="text/css" href="{% static "offline/css/bootstrap.min.css" %}">
+		<script type="text/javascript" src="{% static "offline/js/bootstrap.min.js" %}"></script>
+		<link rel="stylesheet" type="text/css" href="{% static "offline/css/font-awesome.min.css" %}">
+		<script type="text/javascript" src="{% static "offline/js/Chart.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/smooch.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/angular-chart.min.js" %}"></script>
+		<link rel="stylesheet" type="text/css" href="{% static "offline/css/css.css" %}">
+		<link rel="stylesheet" type="text/css" href="{% static "offline/css/nprogress.min.css" %}">
+		<script type="text/javascript" src="{% static "offline/js/nprogress.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/angular-recaptcha.min.js" %}"></script>
+		 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+		<script type="text/javascript">
+			if($(window).width()>767) Smooch.init({
+				appToken: 'eakl8lpwgfp9rf8jlymgbqzzr',
+				customText: {
+				  headerText: 'Feedback/suggestions?',
+				  inputPlaceholder: 'Type a message...',
+				  sendButtonText: 'Send',
+				  introductionText: 'We\'re here to talk, so ask us anything! Your suggestions and feedback are welcome and appreciated.',
+				  introAppText:''
+				}
+			});
+		</script>
+	</head>
+	<body ng-app="techfinStocksAdmin">
+	<div class="wrapper" ng-controller="home">
+		<div class="col-sm-4">
+			<h3 style="text-align:center;">For STOCK Predictions</h3>
+			<hr>
+			<label>Default Training will be done for prediction length 2 for now....</label><br>
+			<button class="btn btn-lg btn-primary" ng-click="updateModel()">Update Model</button><br><br>
+			<button class="btn btn-lg btn-primary" ng-click="trainModel()">Train Model</button><br><br>
+			<button class="btn btn-lg btn-primary" ng-click="updateDB()">Update DB</button>
+			<br><br><br><br>
+			<button class="btn btn-lg btn-primary" ng-click="updateNews()">Update News</button><br><br>
+			<button class="btn btn-lg btn-primary" ng-click="updateTweets()">Update Tweets</button><br><br>
+			<button class="btn btn-lg btn-primary" ng-click="updateMS()">Update MarketSentiments</button>
+		</div>
+		<div class="col-sm-4">
+			<h3 style="text-align:center;">For GOLD Predictions</h3>
+			<hr>
+			<label>Default Training will be done for prediction length 2 for now....</label><br>
+			<button class="btn btn-lg btn-primary" ng-click="updateGoldModel()">Update Model</button><br><br>
+			<button class="btn btn-lg btn-primary" ng-click="trainGoldModel()">Train Model</button><br><br>
+			<button class="btn btn-lg btn-primary" ng-click="updateGoldDB()">Update DB</button>
+			<br><br><br><br>
+			<button class="btn btn-lg btn-primary" ng-click="updateGoldNews()">Update News</button><br><br>
+			<button class="btn btn-lg btn-primary" ng-click="updateGoldTweets()">Update Tweets</button><br><br>
+			<!--<button class="btn btn-lg btn-primary" ng-click="updateGoldMS()">Update MarketSentiments</button>-->
+		</div>
+		<div class="col-sm-4">
+			<h3 style="text-align:center;">For BANKING</h3>
+			<hr>
+			<button class="btn btn-lg btn-primary" ng-click="updateBankDB()">Update Data</button><br><br>
+
+			<button class="btn btn-lg btn-primary" ng-click="updateRealEstateDB()">Update Real-Estate</button><br><br>
+
+			<button class="btn btn-lg btn-primary" ng-click="trainRealEstateModel()">Train Real-Estate Model</button><br><br>
+
+			<button class="btn btn-lg btn-primary" ng-click="RealEstatePrediction()">Real-Estate Predictions</button><br><br>
+
+		</div>
+		<div class="container-fluid">
+			<div class="modal fade" id="updatedbModal">
+				<div class="modal-dialog modal-md">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h3 class="modal-title">Update Database</h3>
+						</div>
+						<div class="modal-body" style="margin-left:40px;">
+							<h6>This process will take some time.....</h6>
+							<div class="checkbox disabled" ng-repeat="company in companyList track by $index">
+							  	<h4><input type="checkbox" ng-model="checkboxList[$index]">{[{company}]}</h4>
+							</div><br>
+							<div class="g-recaptcha" data-sitekey="6LdMKBMUAAAAAKirSN0rP8BRelP0YPIssvZ6lIyr"></div>
+							<br/>
+							<button class="btn btn-primary" ng-click="update(companyList, checkboxList)">Update</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal fade" id="trainModal">
+				<div class="modal-dialog modal-md">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h3 class="modal-title">Train Model</h3>
+						</div>
+						<div class="modal-body" style="margin-left:40px;">
+							<h4>This process will take lot of time.....</h4>
+							<hr/>
+
+							<h5>Select companies for training....</h5>
+							<div class="checkbox disabled" ng-repeat="company in companyList track by $index">
+							  	<h4><input type="checkbox" ng-model="checkboxList[$index]">{[{company}]}</h4>
+							</div><br>
+
+							<hr>
+							<h5>Select prediction length</h5>
+							<select class="form-control" style="height:50px;" ng-options="length for length in predictionLengths" ng-model="lengthSelected"><option value="">Select length</option>
+							</select><br>
+
+							<h5>Select seq length</h5>
+							<select class="form-control" style="height:50px;" ng-options="length for length in predictionLengths" ng-model="seqlengthSelected"><option value="">Select length</option>
+							</select><br>
+							<div class="g-recaptcha" data-sitekey="6LdMKBMUAAAAAKirSN0rP8BRelP0YPIssvZ6lIyr"></div>
+							<br/>
+							<button class="btn btn-primary" ng-click="train(companyList, checkboxList)">Train</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</body>
+
+	<script type="text/javascript" src="{% static "stocksAdmin.js" %}"></script>
+</html>

@@ -1,0 +1,195 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>TechnoFin</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="One stop for all entrepreneurship resources">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0, user-scalable=no"/>
+		<meta name="author" content="StockHub">
+		<link href="{% static "offline/css/bootstrap.min.css"%}" rel='stylesheet' type='text/css' />
+		<link href="{% static "base.css" %}" rel='stylesheet' type='text/css' />
+		<link href="{% static "offline/fonts/lato.css"%}" rel='stylesheet' type='text/css' />
+		<link rel="stylesheet" type="text/css" href= "{% static "offline/css/font-awesome.min.css" %}">
+
+		<script type="text/javascript" src="{% static "offline/js/jquery.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/angular.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/angular-cookies.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/angular-messages.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/angular-animate.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/angular-sanitize.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/angular-route.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/angular-resource.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/angular-touch.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/ui-bootstrap-tpls.min.js" %}"></script>
+		<link rel="stylesheet" type="text/css" href="{% static "offline/css/ng-img-crop.min.css" %}">
+		<link rel="stylesheet" type="text/css" href="{% static "offline/css/bootstrap.min.css" %}">
+		<script type="text/javascript" src="{% static "offline/js/bootstrap.min.js" %}"></script>
+		<link rel="stylesheet" type="text/css" href="{% static "offline/css/font-awesome.min.css" %}">
+		<script type="text/javascript" src="{% static "offline/js/Chart.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/smooch.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/angular-chart.min.js" %}"></script>
+		<link rel="stylesheet" type="text/css" href="{% static "offline/css/css.css" %}">
+		<link rel="stylesheet" type="text/css" href="{% static "offline/css/nprogress.min.css" %}">
+		<script type="text/javascript" src="{% static "offline/js/nprogress.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/angular-recaptcha.min.js" %}"></script>
+
+		<script type="text/javascript">
+			if($(window).width()>767) Smooch.init({
+				appToken: 'eakl8lpwgfp9rf8jlymgbqzzr',
+				customText: {
+				  headerText: 'Feedback/suggestions?',
+				  inputPlaceholder: 'Type a message...',
+				  sendButtonText: 'Send',
+				  introductionText: 'We\'re here to talk, so ask us anything! Your suggestions and feedback are welcome and appreciated.',
+				  introAppText:''
+				}
+			});
+		</script>
+	</head>
+	<body ng-app="techfinBanking">
+	<div class="wrapper" ng-controller="home">
+	<div class="main">
+		<nav class="navbar navbar-default navbar-brand navbar-fixed-top" id="TopNavBar" style="padding:0; margin:0; ">
+			<div class="sitelogo navbar-header" style="height: 50px;"> 
+				<button type="button" class="navbar-toggle" id="topNavToggleButton" data-toggle="collapse" data-target="#ehTopNavBar">
+					<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+				</button>
+				<h3 style="padding-left:20px;"><a href="/index/#home" style="text-decoration: none;">TechnoFin</a></h3>
+			</div>
+			<!--<div class="collapse navbar-collapse" style="padding-right:50px; height:50px;">
+				<ul class="nav navbar-nav navbar-right" >
+					<li><a href="#about" style="color:black;"><i class="fa fa-info-circle"></i> About</a></li>
+					<li><a href="#predict" style="color: black;">Predict</a></li>
+					<li><a href="#compare" style="color:black;">Compare</a></li>
+					<li><a href="#hypothesis" style="color:black;"><i class="fa fa-sticky-note"></i> Hypothesis</a></li>
+					<li><a href="#hypothesis" style="color:black;"><i class="fa fa-newspaper-o"></i> News</a></li>
+				</ul>
+			</div>-->
+		</nav>
+		<section class="container-fluid" id="home" style="height: 750px; background-size: cover; padding:0; padding-top:100px;">
+			<div class="container-fluid" style="height: 300px;">
+				<div class="col-sm-6 panel-default">
+					<div class="panel-heading" style="opacity: 0.8;"><strong>Can we actually predict stock prices?</strong> </div>
+					<div class="panel-body" style="color: black;">
+						<p style="font-size: 16px;"><strong>
+						No, variation in stock prices are highly random.<br><br>
+						The only thing we could hope to do is to make an educated guess by analyzing the available data and with an appreciable plausibility, decide where we should(and should not) invest our money for gaining the maximum profit.</strong>
+						</p>
+					</div>
+				</div>
+				<div class="col-sm-6 panel-default">
+					<div class="panel-heading" style="opacity: 0.8; "><strong>What should we do for predicting the stock prices?</strong></div>
+					<div class="panel-body" style="color: black;">
+						<p style="font-size: 16px;"><strong>
+						In our modern socially connected world, various sources of social media consistently plays a major role in predicting the image or relevance of any person or any company in general, thereby determining the stock prices. By extracting relevant data from a myriad of these sources, we can make good educated guesses regarding the prices of the concerned stocks. A few of these sources include:-<br><br>
+						+ News<br>
+						+ Company tweets<br>
+						+ Company History<br>
+						+ Industry Trends 
+
+						<button class="btn btn-lg btn-primary" style="float: right;" data-toggle="modal" data-target="#myModal">Problem</button></strong></p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="container-fluid" id="about" style="height: 750px; padding-top:60px;">
+			<div class="col-sm-4" style="padding: auto auto;">
+				<label>Select group:</label>
+				<select  ng-model="groupType" ng-change="groupChanged()" ng-options="type for type in groupList">
+					<option value="">Select Group</option>
+				</select>
+				<label>Select Required Bank:</label>
+				<select ng-model="typeSelected" ng-change="typeChanged()" ng-options="bank.name for bank in bankList">
+					<option value="">Select Bank</option>
+				</select>
+			</div>
+			<div class="col-sm-8">
+				<table class="table table-hover" style="display:none;">
+					<thead><tr><th>BankName</th><th></th></tr></thead>>
+				</table>
+			</div>
+		</section>
+		<section class="container-fluid" id="predict" style="height: 750px; background-size: cover; padding-top:60px;">
+			<h3 style="text-align: center;"><strong>Our model predictions...</strong></h3>
+			<div class="container-fluid">
+				<button type="button" class="btn btn-lg btn-primary" id="showPredbtn" ng-click="showPred()" style="display:none;">Predict</button>
+				<div class="container-fluid" id="parent_goldmodel">
+					<canvas id="canvas_goldmodel"></canvas>
+				</div>
+				<table class="table table-hover" style="float: right;">
+					<thead><tr><th>type</th><th>value</th></tr></thead>
+					<tbody>
+						<tr>
+							<td>MSE</td><td>{[{MSE}]}</td>
+						</tr>
+						<tr>
+							<td>MAE</td><td>{[{MAE}]}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+
+		<section class="container-fluid" id="compare" style="height: 850px; padding-top:60px;">
+			<h3 style="text-align: center;"><strong>When is the right time to invest in Gold?</strong></h3>
+			<div class="container-fluid">
+				<button type="button" class="btn btn-md btn-primary" id="predInfobtn" ng-click="predictInfo()" style="display:none;">Compare</button>
+				<div class="container-fluid" id="parent_goldprediction">
+					<canvas id="canvas_goldprediction"></canvas>
+				</div>
+			</div>
+			<div class="modal fade" id="myModal2" role="dialog">
+				<div class="modal-dialog modal-lg">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h3 class="modal-title">Future opportunities:</h3>
+					</div>
+					<div class="modal-body">
+						<div class="container-fluid">
+							<h4>1. Implementation of NSE api's for automated real-time updates</h4><br>
+							<h4>2. Implementation of twitter and TOI api's for collecting company trending news, which provides an additional features for stock prediction</h4><br>
+							<h4>3. Graphical representation of company trends </h4>
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
+			<div class="modal fade" id="myModal3" role="dialog">
+				<div class="modal-dialog modal-lg">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h3 class="modal-title">Business Model:</h3>
+					</div>
+					<div class="modal-body">
+						<div class="container-fluid">
+							<h4>1. Free website usage:</h4>
+							<p style="padding-left:50px;">a. Making website public for free allows us to gain user confidence on our algorithm</p>
+							<p style="padding-left:50px;">b. Helps us to collect their feedback, and improve our model</p>
+							<h4>2. Commercial Tieup's: </h4>
+							<p style="padding-left:50px;">a. Assigning membership cost for each user on monthly/yearly bases</p>
+							<p style="padding-left:50px;">b. Sponsored Advertisements</p>
+							<p style="padding-left:50px;">c. Associating with companies and brokers</p>
+							<h4>3. Data</h4>
+							<p style="padding-left:50px;">a. Anonymized consumer data</p>
+							<p style="padding-left:50px;">b. Additional deliverable</p>
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
+		</section>
+		<section class="container-fluid" id="hypothesis" style="background-image: url(image/2.jpg); height: 750px; background-size: cover;">
+			<h3 style="text-align: center;margin: auto;"><strong>Will be added soon.....</strong></h3>
+		</section>
+	</div></div>
+	</body>
+	<script type="text/javascript" src="{% static "gold.js" %}"></script>
+</html>

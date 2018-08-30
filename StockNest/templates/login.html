@@ -1,0 +1,72 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>TechnoFin</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="One stop for all entrepreneurship resources">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0, user-scalable=no"/>
+		<meta name="author" content="StockHub">
+		<link href="{% static "offline/css/bootstrap.min.css"%}" rel='stylesheet' type='text/css' />
+		<link href="{% static "base.css" %}" rel='stylesheet' type='text/css' />
+		<link href="{% static "offline/fonts/lato.css"%}" rel='stylesheet' type='text/css' />
+		<link rel="stylesheet" type="text/css" href= "{% static "offline/css/font-awesome.min.css" %}">
+
+		<script type="text/javascript" src="{% static "offline/js/jquery.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/angular.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/angular-cookies.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/angular-messages.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/angular-animate.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/angular-sanitize.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/angular-route.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/angular-resource.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/angular-touch.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/ui-bootstrap-tpls.min.js" %}"></script>
+		<link rel="stylesheet" type="text/css" href="{% static "offline/css/ng-img-crop.min.css" %}">
+		<link rel="stylesheet" type="text/css" href="{% static "offline/css/bootstrap.min.css" %}">
+		<script type="text/javascript" src="{% static "offline/js/bootstrap.min.js" %}"></script>
+		<link rel="stylesheet" type="text/css" href="{% static "offline/css/font-awesome.min.css" %}">
+		<script type="text/javascript" src="{% static "offline/js/Chart.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/smooch.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/angular-chart.min.js" %}"></script>
+		<link rel="stylesheet" type="text/css" href="{% static "offline/css/css.css" %}">
+		<link rel="stylesheet" type="text/css" href="{% static "offline/css/nprogress.min.css" %}">
+		<script type="text/javascript" src="{% static "offline/js/nprogress.min.js" %}"></script>
+		<script type="text/javascript" src="{% static "offline/js/angular-recaptcha.min.js" %}"></script>
+		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	</head>
+	<body ng-app="techfinlogin" ng-controller="login">
+
+		<div class="container-fluid" style="width: 350px; height: 300px;margin-top: 250px;" ng-show="loginview">
+			<label>Username: </label>
+			<input class="form-control" type="text" name="username" ng-model = "username"/>
+			<label>Password: </label>
+			<input class="form-control" type="password" name="password" ng-model = "password">
+			<br>
+			<button type="button" class="btn btn-default" ng-click="login()">Login</button><br>
+			<p>No account?  <button class="btn btn-default" ng-click="signupviewfunc()">Signup</button></p>
+		</div>
+		<div class="container-fluid" style="width: 400px; margin-top: 150px;" ng-show="signupview">
+			<label>First Name: </label>
+			<input class="form-control" type="text" name="firstname" ng-model = "firstname"/>
+			<label>Last Name: </label>
+			<input class="form-control" type="text" name="lastname" ng-model = "lastname"/>
+			<label>Username: </label>
+			<input class="form-control" type="text" name="username" ng-model = "username"/>
+			<label>Email: </label>
+			<input class="form-control" type="text" name="email" ng-model = "email"/>
+			<label>Contact No: </label>
+			<input class="form-control" type="text" name="contactno" ng-model = "contactno"/>
+			<label>Password: </label>
+			<input class="form-control" type="password" name="password" ng-model = "password">
+			<label>Confirm Password: </label>
+			<input class="form-control" type="password" name="cpassword" ng-model = "cpassword"/>
+			<br>
+			<div class="g-recaptcha" data-sitekey="6LdMKBMUAAAAAKirSN0rP8BRelP0YPIssvZ6lIyr"></div>
+			<br/>
+			<button type="button" class="btn btn-default" ng-click="signup()">Signup</button><br>
+		</div>
+	</body>
+	<script type="text/javascript" src="{% static "login.js" %}"></script>
+</html>

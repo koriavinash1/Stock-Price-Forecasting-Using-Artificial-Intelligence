@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <title>TechnoFin</title>
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="description" content="One stop for all entrepreneurship resources">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0, user-scalable=no"/>
+	    <meta name="author" content="StockHub">
+	    
+	    <link href="static /css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+	    <link href="./css/base.css" rel='stylesheet' type='text/css' />
+	    <link href="./fonts/lato.css" rel='stylesheet' type='text/css' />
+	    <link rel="stylesheet" type="text/css" href= "./css/font-awesome.min.css">
+
+	    <script type="text/javascript" src="./js/jquery.min.js"></script>
+		<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="./js/bootstrap-toggle.min.js"></script>
+		<script type="text/javascript" src="./js/bootstrap2-toggle.min.js"></script>
+
+		<script type="text/javascript" src="./js/angular.min.js"></script>
+		<script type="text/javascript" src="./js/angular-touch.min.js"></script>
+		<script type="text/javascript" src="./js/angular-recaptcha.min.js"></script>
+		
+		<script type="text/javascript" src="./js/Chart.min.js"></script>
+		<script type="text/javascript" src="./js/jquery.onepage-scroll.js"></script>
+
+		<script type="text/javascript" src="./graphdata/VEDL_data.js"></script>
+		<script type="text/javascript" src="./graphdata/VEDL_label.js"></script>
+		<script type="text/javascript" src="./graphdata/VEDL_pval.js"></script>
+		<script type="text/javascript" src="./graphdata/BPCL_data.js"></script>
+		<script type="text/javascript" src="./graphdata/BPCL_label.js"></script>
+		<script type="text/javascript" src="./graphdata/BPCL_pval.js"></script>
+		<script type="text/javascript" src="./graphdata/HINDALCO_data.js"></script>
+		<script type="text/javascript" src="./graphdata/HINDALCO_label.js"></script>
+		<script type="text/javascript" src="./graphdata/HINDALCO_pval.js"></script>
+		<script type="text/javascript" src="./graphdata/RELIANCE_data.js"></script>
+		<script type="text/javascript" src="./graphdata/RELIANCE_label.js"></script>
+		<script type="text/javascript" src="./graphdata/RELIANCE_pval.js"></script>
+		<script type="text/javascript" src="./graphdata/YESBANK_data.js"></script>
+		<script type="text/javascript" src="./graphdata/YESBANK_label.js"></script>
+		<script type="text/javascript" src="./graphdata/YESBANK_pval.js"></script>
+
+
+		<script type="text/javascript" src="./graphdata/max_vals.js"></script>
+		<style>
+		    body.disabled-onepage-scroll .onepage-wrapper  section {
+		      min-height: 100%;
+		      height: auto;
+		    }
+		    body.disabled-onepage-scroll .main section .page_container, body.disabled-onepage-scroll .main section.page3 .page_container  {
+		      padding: 20px;
+		      margin-top: 150px;
+		      -webkit-box-sizing: border-box;
+		      -moz-box-sizing: border-box;
+		      box-sizing: border-box;
+		    }
+		    body.disabled-onepage-scroll  section .page_container h1{
+		      text-align: center;
+		      font-size: 50px;
+		    }
+		    body.disabled-onepage-scroll section .page_container h2, body.disabled-onepage-scroll section .page_container .credit, body.disabled-onepage-scroll section .page_container .btns{
+		      text-align: center;
+		      width: 100%;
+		    }
+		    body.disabled-onepage-scroll .main section.page1 > img {
+		      position: absolute;
+		      width: 80%;
+		      left: 10%;
+		    }
+		    body.disabled-onepage-scroll .main section > img {
+		      position: relative;
+		      max-width: 80%;
+		      bottom: 0;
+		    }
+		    body.disabled-onepage-scroll code {
+		      width: 95%;
+		      margin: 0 auto 25px;
+		      float: none;
+		      overflow: hidden;
+		    }
+		    body.disabled-onepage-scroll .main section.page3 .page_container {
+		      width: 90%;
+		      margin-left: auto;
+		      margin-right: auto;
+		      right: 0;
+		    }
+		</style>
+	</head>
+	<body>
+	  <div class="wrapper"><div class="main">
+		<nav class="navbar navbar-brand navbar-fixed-top" id="TopNavBar" style="padding:0; margin:0; ">
+			<div class="sitelogo navbar-header" style="height: 50px;"> 
+				<button type="button" class="navbar-toggle" id="topNavToggleButton" data-toggle="collapse" data-target="#ehTopNavBar">
+					<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+				</button>
+				<h3 style="padding-left:20px;"><a href="#home" style="text-decoration: none;">StockNest</a></h3>
+			</div>
+			<div class="collapse navbar-collapse" id="ehTopNavBar" style="padding-right:50px; height:50px;">
+				<ul class="nav navbar-nav navbar-right" >
+					<li><a href="#about" style="color:black;">ABOUT</a></li>
+					<li><a href="#stocks" style="color:black;">STOCKS</a></li>
+					<li><a href="#compare" style="color:black;">COMPARE</a></li>
+					<li><a href="#hypothesis" style="color:black;">HYPOTHESIS</a></li>
+					<li><a href="#contact" style="color:black;">CONTACT</a></li>
+				</ul>
+			</div>
+			<hr style="margin: 0; padding: 0;">
+		</nav>
+		<section class="container-fluid" id="home" style="background-image: url(image/4.jpg); height: 700px; background-size: cover; padding-top:100px;">
+			<div style="width: 50%; float: right; padding: 15px;">
+				<div class="panel-primary">
+					<div class="panel-heading" style="opacity: 0.8;"><strong>Can we actually predict stock prices?</strong> </div>
+					<div class="panel-body" style="color: black;">
+						<p style="font-size: 16px;"><strong>
+						No, variation in stock prices are highly random.<br><br>
+						The only thing we could hope to do is to make an educated guess by analyzing the available data and with an appreciable plausibility, decide where we should(and should not) invest our money for gaining the maximum profit.</strong>
+						</p>
+					</div>
+				</div><br><br>
+				<div class="panel-primary">
+					<div class="panel-heading" style="opacity: 0.8; "><strong>What should we do for predicting the stock prices?</strong></div>
+					<div class="panel-body" style="color: black;">
+						<p style="font-size: 16px;"><strong>
+						In our modern socially connected world, various sources of social media consistently plays a major role in predicting the image or relevance of any person or any company in general, thereby determining the stock prices. By extracting relevant data from a myriad of these sources, we can make good educated guesses regarding the prices of the concerned stocks. A few of these sources include:-<br><br>
+
+
+						+ News<br>
+						+ Company tweets<br>
+						+ Company History<br>
+						+ Industry Trends 
+
+						<button class="btn btn-lg btn-primary" style="float: right;" data-toggle="modal" data-target="#myModal">Problem</button></strong></p>
+						<!-- As the economist Burton Malkiel (in his book _A Random Walk Down Wall Street_) says :<br>
+						<strong><i>"A blindfolded monkey throwing darts at a newspaper's financial pages could select a portfolio that would do just as well as one carefully selected by experts"</i></strong><br>
+
+						If that is the case, then why do the companies like Morgan Stanley, Goldman Sachs and Citigroup hire data scientists for building predictive models? Why do all the companies in Wall Street use Huge data analytics to begin with?<br>
+
+						In the beginning, people in Wall Street used to randomly guess the probability of price variation on each stock, haphazardly calling, yelling on their phones, trying to bet on the best of odds. <br>
+						Now, many top analysts calmly sit in front of their computers and try to get the best bet, using machine learning techniques for predictive analysis. Still a better way than teaching a monkey to throw darts.</p> -->
+					</div>
+				</div>
+			</div>
+			<!-- Modal -->
+			<div class="modal fade" id="myModal" role="dialog">
+				<div class="modal-dialog modal-lg">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h3 class="modal-title">Problem :</h3>
+					</div>
+					<div class="modal-body">
+						<div class="container-fluid">
+							<h4>1. Stock Price Variations are highly non-linear</h4>
+							<h4>2. Stock Predictions:</h4>
+							<p style="padding-left: 50px;">a. Will help the users to know where to invest and where not to, 
+							To get an optimal output</p>
+							<p style="padding-left: 50px;">b. Will help startup enthusiasts to follow particular company</p>
+							<p style="padding-left: 50px;">c. Will also help company to know rise and fall in companies growth</p>
+						</div><br><br>
+						<div class="container-fluid" style="padding-left:0; margin-left: 0;">
+							<h3 class="modal-title">Existing Solutions:</h3>
+							<hr style="padding-left:0; margin-left: 0;">
+							<div class="container-fluid">
+								<h4>1. Online free Stock Predictors:</h4>
+								<p style="padding-left: 50px;">a. Complicated Parameters</p>
+								<p style="padding-left: 50px;">b. Time based data not easily available</p>
+								<p style="padding-left: 50px;">c. Predicts using non mathematical methods</p>
+								<p style="padding-left: 50px;">d. Doesn't provide better visualization of data</p>
+
+								<h4>2. Yahoo finance data and NSE data: </h4>
+								<p style="padding-left: 50px;">a. Not user friendly for analysis or prediction</p>
+								<p style="padding-left: 50px;">b. Complicated for common man</p>
+								<p style="padding-left: 50px;">c. Doesn't provide better visualization of data</p>
+							</div>
+						</div><br><br>
+						<div class="container-fluid" style="padding-left:0; margin-left: 0;">
+							<h3 class="modal-title">Why Our website?</h3>
+							<hr style="padding-left:0; margin-left: 0;">
+							<div class="container-fluid">
+								<h4>1. Easy to use</h4>
+								<h4>2. Real time data modeling and analysis </h4>
+								<h4>3. User Interactive with proper data visualization</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+				  
+				</div>
+			</div>
+		</section>
+		<section class="container-fluid" id="about" style="background-image: url(image/6.png); height: 700px; background-size: cover; padding-top:60px;">
+			<h3 style="text-align: center;"><strong>Network Architecture and results</strong></h3>
+			<div class="col-sm-6" style="padding: 15px;">
+				<div class="panel-info" style="margin-top: 20px; color: black; font-size: 18px;">
+					<div class="panel-heading"><strong>About our network :</strong></div>
+					<div class="panel-body">
+						<p>1.&nbsp;&nbsp;&nbsp;  	Model predicts closing prices of stocks</p>
+
+						<p>2.&nbsp;&nbsp;&nbsp; 	Our models uses LSTM/MLP type of network</p>
+						
+						<p>3.&nbsp;&nbsp;&nbsp;	For large dataset we use LSTM, for smaller dataset we use MLP (3 layered)</p>
+						
+						<p>4.&nbsp;&nbsp;&nbsp; 	LSTM with sequence length 30, parameters around 17,000 (bidirectional LSTM + LSTM with attention mechanism + 3 layered MLP for regression)</p>
+						
+						<p>5.&nbsp;&nbsp;&nbsp; 	MLP with around 1,500 parameters input sequence length: 10(30)</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6" style="padding:15px;">
+				<div class="carousel slide" data-ride="carousel" data-interval="4000" style="margin-top: 20px;">
+              		<div class="carousel-inner">
+                		<div class="item active"><img src="graph/predictionBPCL.png"></div>
+		                <div class="item"><img src="graph/predictionHINDALCO.png"></div>
+		                <div class="item"><img src="graph/predictionRELIANCE.png"></div>
+		                <div class="item"><img src="graph/predictionVEDL.png"></div>
+		                <div class="item"><img src="graph/predictionYESBANK.png"></div>
+              		</div>
+            	</div>
+			</div>
+		</section>
+		<section class="container-fluid" id="stocks" style="height: 700px; background-size: cover; padding-top:60px;">
+			<h3 style="text-align: center;"><strong>Let's make some MONEY!!</strong></h3>
+			<div class="container-fluid">
+				<div class="col-sm-4">
+					<br><br>
+					<label>Select Company</label><br>
+					<select class="form-control" id="stockCompany">
+						<option value="">Select Company..</option>
+						<option value="RELIANCE">RELIANCE</option>
+						<option value="BPCL">BPCL</option>
+						<option value="VEDL">VEDL</option>	
+						<option value="HINDALCO">HINDALCO</option>
+						<option value="YESBANK">YESBANK</option>							
+					</select><br><br><br>
+
+					<label>Prediction Length</label><br>
+					<select class="form-control" id="stockPrediction">
+						<option value="">Select length</option>
+						<option value="1">one</option>
+						<option value="2">two</option>
+						<option value="10">ten</option>
+						<option value="30">thirty</option>
+					</select><br><br><br>
+
+					<button type="button" class="btn btn-lg btn-primary" id="stockbtn">Predict</button>
+				</div>
+				<div class="col-sm-8" id="parent_stockprediction">
+					<canvas id="canvas_stockprediction"></canvas>
+				</div>
+			</div>
+		</section>
+		<section class="container-fluid" id="compare" style="height: 700px; background-size: cover; padding-top:60px;">
+			<h3 style="text-align: center;"><strong>What's the right place to invest?</strong></h3>
+			<div class="container-fluid">
+				<div class="col-sm-4">
+					<br><br>
+
+					<label>Risk Factor</label>
+					<select class="form-control" id="risktype">
+						<option value="">Select Risk type..</option>
+						<option value="LOW">Low</option>
+						<option value="MID">Medium</option>
+						<option value="HIGH">High</option>
+					</select><br>
+
+					<label id="labelcomp1">Select Company1</label><br>
+					<select class="form-control" id="low1">
+						<option value="">Select Company..</option>
+						<option value="RELIANCE">RELIANCE</option>
+						<option value="YESBANK">YESBANK</option>					
+					</select>
+					<select class="form-control" id="mid1">
+						<option value="">Select Company..</option>
+						<option value="BPCL">BPCL</option>					
+					</select>
+					<select class="form-control" id="high1">
+						<option value="">Select Company..</option>
+						<option value="VEDL">VEDL</option>
+						<option value="HINDALCO">HINDALCO</option>					
+					</select><br>
+
+					<label id="labelcomp2">Select Company2</label><br>
+					<select class="form-control" id="low2">
+						<option value="">Select Company..</option>
+						<option value="RELIANCE">RELIANCE</option>
+						<option value="YESBANK">YESBANK</option>					
+					</select>
+					<select class="form-control" id="mid2">
+						<option value="">Select Company..</option>
+						<option value="BPCL">BPCL</option>					
+					</select>
+					<select class="form-control" id="high2">
+						<option value="">Select Company..</option>
+						<option value="VEDL">VEDL</option>
+						<option value="HINDALCO">HINDALCO</option>					
+					</select><br>
+
+					<button type="button" class="btn btn-md btn-primary" id="comparebtn">Compare</button>
+					<button class="btn btn-md btn-primary" data-toggle="modal" data-target="#myModal4" id="errtbid">Error Table</button><br><br><br><br>
+
+					<button class="btn btn-md btn-primary" data-toggle="modal" data-target="#myModal2">Future opportunities</button>
+					<button class="btn btn-md btn-primary" data-toggle="modal" data-target="#myModal3">Business Model</button>
+				</div>
+				<div class="col-sm-8" id="parent_stockcompare">
+					<canvas id="canvas_stockcompare"></canvas>
+				</div>
+			</div>
+			<div class="modal fade" id="myModal2" role="dialog">
+				<div class="modal-dialog modal-lg">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h3 class="modal-title">Future opportunities:</h3>
+					</div>
+					<div class="modal-body">
+						<div class="container-fluid">
+							<h4>1. Implementation of NSE api's for automated real-time updates</h4><br>
+							<h4>2. Implementation of twitter and TOI api's for collecting company trending news, which provides an additional features for stock prediction</h4><br>
+							<h4>3. Graphical representation of company trends </h4>
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
+			<div class="modal fade" id="myModal3" role="dialog">
+				<div class="modal-dialog modal-lg">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h3 class="modal-title">Business Model:</h3>
+					</div>
+					<div class="modal-body">
+						<div class="container-fluid">
+							<h4>1. Free website usage:</h4>
+							<p style="padding-left:50px;">a. Making website public for free allows us to gain user confidence on our algorithm</p>
+							<p style="padding-left:50px;">b. Helps us to collect their feedback, and improve our model</p>
+							<h4>2. Commercial Tieup's: </h4>
+							<p style="padding-left:50px;">a. Assigning membership cost for each user on monthly/yearly bases</p>
+							<p style="padding-left:50px;">b. Sponsored Advertisements</p>
+							<p style="padding-left:50px;">c. Associating with companies and brokers</p>
+							<h4>3. Data</h4>
+							<p style="padding-left:50px;">a. Anonymized consumer data</p>
+							<p style="padding-left:50px;">b. Additional deliverable</p>
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
+			<div class="modal fade" id="myModal4" role="dialog">
+				<div class="modal-dialog modal-lg">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h3 class="modal-title">Error table:</h3>
+					</div>
+					<div class="modal-body">
+						<div class="container-fluid">
+							<table class="table table-hover">	
+								<thead><tr><th>Company</th><th>MAPE</th><th>RMSE</th></tr></thead>
+								<tbody id = "errormodel"></tbody>			
+							</table>
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
+		</section>
+		<section class="container-fluid" id="hypothesis" style="background-image: url(image/2.jpg); height: 700px; background-size: cover; padding-top:60px;">
+			<h3 style="text-align: center;margin: auto;"><strong>Will be added soon.....</strong></h3>
+		</section>
+		<section class="container-fluid" id="contact" style="height: 700px; background-size: cover; padding-top:100px;">
+			<h3 style="text-align: center;">Contact Us</h3>
+			<div class="container-fluid" style="height: 380px;margin-top:80px;">
+				<div class="col-sm-4">
+					<label style="font-size:28px;"><span class="glyphicon glyphicon-map-marker" style="margin: 10px;"></span> IIT Madras</label><br>
+					<label style="font-size:28px;"><span class="glyphicon glyphicon-phone" style="margin: 10px;"></span> 7406184580</label>
+				</div>
+				<div class="col-sm-8">
+					<input type="text" name="from" class="form-control" style="border: none;" placeholder="Email ID"><br>
+					<input type="text" name="subject" class="form-control" style="border: none;" placeholder="Subject"><br>
+					<textarea class="form-control" style="border: none;height: 140px;" name="content" placeholder="Write your suggestions/ complaints..."></textarea><br>
+
+					<button class="btn btn-md btn-primary">Send</button>
+
+				</div>
+			</div>
+			<hr style="padding: 0; margin: 0;">
+			<div class="container-fluid" style="height: 100px;">
+				<p style="text-align:center;margin-top: 20px;">
+					<i class="fa fa-twitter" aria-hidden="true" style="font-size:28px; margin: 5px;" ></i>
+					<i class="fa fa-facebook" style="font-size:28px; margin: 5px;"></i>
+					<i class="fa fa-google-plus" style="font-size:28px; margin: 5px;"></i>
+					<i class="fa fa-github" style="font-size:28px; margin: 5px;"></i>
+				</p>
+				<p style="text-align:center;">&copy; stockhub 2017</p>
+			</div>
+		</section>
+	</div></div>
+	</body>
+	<script type="text/javascript" src="./js/base.js"></script>
+</html>
