@@ -42,6 +42,8 @@ first terminal
 ``` bash
 git clone git@github.com:koriavinash1/FIN_ishers.git
 cd FIN_ishers/StockNest
+python manage.py makemigrations
+python manage.py migrate
 python manage.py runserver
 ```
 
