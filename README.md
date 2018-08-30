@@ -1,5 +1,7 @@
 # Stock-Price-Forecasting-Using-Artificial-Intelligence
-New approach for stock market prediction using Artificial Intiligance
+
+New approach for stock market prediction using Artificial Intelligence
+
 ## Techniques used
 
 > Bidirectional LSTM on historical data
