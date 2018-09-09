@@ -49,7 +49,7 @@ python manage.py runserver
 
 second ternimal
 ```bash
-cd FIN_ishers/StockNest
+cd Stock-Price-Forecasting-Using-Artificial-Intelligence/StockNest
 celery -A StockNest worker -l info
 ```
 
