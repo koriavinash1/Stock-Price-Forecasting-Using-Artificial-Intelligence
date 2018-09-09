@@ -41,7 +41,7 @@ New approach for stock market prediction using Artificial Intelligence
 first terminal
 ``` bash
 git clone git@github.com:koriavinash1/FIN_ishers.git
-cd FIN_ishers/StockNest
+cd Stock-Price-Forecasting-Using-Artificial-Intelligence/StockNest
 python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
